@@ -28,3 +28,7 @@
   width: 34px;
   text-align: center;
 }
+.guessed,.hidden{
+  display: none;
+}
+

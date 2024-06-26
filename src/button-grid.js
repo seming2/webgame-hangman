@@ -1,6 +1,6 @@
 import Button from "./button";
 // eslint-disable-next-line import/no-anonymous-default-export
-export default function(){
+export default function({letterGuessed, isShown}){
     let letters = [
         'A','B','C','D','E','F','G','H',
         'I','J','K','L','M','N','O','P',
@@ -11,11 +11,16 @@ export default function(){
         <Button
             value={letter}
             key ={index}
+            onClick={letterGuessed}
          />
     ));
 
+    let className = 'flex flex-wrap'
+    if(!isShown){
+        className += ' hidden'
+    }
     return(
-        <div className="flex flex-wrap">
+        <div className={className}>
             {buttons}
         </div>
       );
